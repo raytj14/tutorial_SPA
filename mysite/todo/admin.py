@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Idea
+
+class IdeaModelAdmin(admin.ModelAdmin):
+    list_display = ('idea', 'remind', 'created_at', 'updated_at')
+    ordering = ('-created_at',)
+    readonly_fields = ('create_at', 'updated_at')
+
+admin.site.register(Idea, IdeaModelAdmin)
