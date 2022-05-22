@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from todo.models import Idea
+from idea.models import Idea
 
 class IdeaSerializer(serializers.ModelSerializer):
 
